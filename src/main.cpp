@@ -47,7 +47,7 @@ void loop() {
 
     // unpressed
     if (deboucedInput == LOW) {
-      Serial.print("CLICKED.");
+      Serial.println("CLICKED.");
 
       if (cur_color == 0 && !fading) {
         fading = true;
