@@ -9,7 +9,7 @@
 #include <Bounce2.h>
 
 #define UV_PRESS_TIME_MS 1500
-#define NUM_LEDS 3
+#define NUM_LEDS 4
 #define DATA_PIN 17
 #define UV_PIN 15
 #define BTN_PIN 8
@@ -77,9 +77,9 @@ void loop() {
   }
 
   if (uv_on) {
-    leds[0] = leds[1] = leds[2] = CRGB::Black;
+    leds[0] = leds[1] = leds[2] = leds[3] = CRGB::Black;
   } else {
-    leds[0] = leds[1] = leds[2] = LED_SEQ[cur_color];
+    leds[0] = leds[1] = leds[2] = leds[3] = LED_SEQ[cur_color];
   }
 
   digitalWrite(UV_PIN, uv_on ? HIGH : LOW);
@@ -88,6 +88,7 @@ void loop() {
     leds[0].fadeLightBy(brightness);
     leds[1].fadeLightBy(brightness);
     leds[2].fadeLightBy(brightness);
+    leds[3].fadeLightBy(brightness);
   }
 
   FastLED.show();
